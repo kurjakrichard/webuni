@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Célszerű külön osztályban csinálni a widgeteket, még a főablakét is.
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
