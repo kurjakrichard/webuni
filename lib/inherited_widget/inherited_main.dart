@@ -1,31 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:webuni/inherited_widget/inherited_stateful.dart';
+import 'package:webuni/inherited_widget/counterdata.dart';
 
-import 'counterdata.dart';
-
-class CounterProviderWidget extends StatefulWidget {
-  final Widget child;
-
-  const CounterProviderWidget({Key? key, required this.child})
-      : super(key: key);
-
-  @override
-  State<CounterProviderWidget> createState() => _CounterProviderWidgetState();
-}
-
-class _CounterProviderWidgetState extends State<CounterProviderWidget> {
-  late CounterData _counterData;
-  @override
-  void initState() {
-    _counterData = CounterData(0, _incrementCounter);
-    super.initState();
-  }
+class InheritedText extends StatelessWidget {
+  const InheritedText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CounterDataInheritedWidget(data: _counterData, child: widget.child);
+    return const CounterProviderWidget(
+      child: MaterialApp(
+        title: 'Inherited test',
+        home: Scaffold(
+          body: Center(
+            child: CounterControlWidget(),
+          ),
+        ),
+      ),
+    );
   }
+}
 
-  void _incrementCounter() => setState(() {
-        _counterData = CounterData(_counterData.count + 1, _incrementCounter);
-      });
+class CounterControlWidget extends StatelessWidget {
+  const CounterControlWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var counter = CounterDataInheritedWidget.of(context);
+    return Column(
+      children: [
+        Text('${counter.count}'),
+        ElevatedButton(
+          child: const Text('Press me'),
+          onPressed: () {
+            counter.incrementCallback();
+          },
+        ),
+      ],
+    );
+  }
 }
