@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:webuni/screens/user_items.dart';
 
 class EmployeeListPage extends StatelessWidget {
+  const EmployeeListPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class EmployeeListPage extends StatelessWidget {
       ),
       backgroundColor: const Color.fromRGBO(199, 204, 219, 1),
       body: Column(
-        children: [UserItem(), UserItem(), UserItem()],
+        children: const [UserItem(), UserItem(), UserItem()],
       ),
     );
   }

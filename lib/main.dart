@@ -5,14 +5,13 @@ import 'package:webuni/screens/employee_list_page.dart';
 //import 'inherited_widget/inherited_main.dart';
 
 // Célszerű külön osztályban csinálni a widgeteket, még a főablakét is.
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Employee app',
       home: EmployeeListPage(),
     );
