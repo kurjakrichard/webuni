@@ -1,14 +1,22 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
-  const UserItem({Key? key}) : super(key: key);
+  final String imageUrl;
+  final String name;
+  final String email;
+
+  const UserItem(
+      {Key? key,
+      required this.imageUrl,
+      required this.name,
+      required this.email})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -25,21 +33,21 @@ class UserItem extends StatelessWidget {
         height: 70,
         child: Row(
           children: [
-            Image.file(File('C:/Users/balza/OneDrive/Képek/Társkereső/a.jpg')),
-            SizedBox(width: 16),
+            Image.network(imageUrl),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  SizedBox(height: 8),
+                children: [
+                  const SizedBox(height: 8),
                   Text(
-                    'Kurják Richárd Kurják Richárd Kurják Richárd',
-                    style: TextStyle(fontSize: 18),
+                    name,
+                    style: const TextStyle(fontSize: 18),
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    'kurjak.richard@gmail.com',
-                    style: TextStyle(fontSize: 14),
+                    email,
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),
