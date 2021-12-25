@@ -32,12 +32,11 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
         foregroundColor: Colors.black,
       ),
       drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children: [
-            DrawerHeader(child: FlutterLogo()),
+            const DrawerHeader(child: FlutterLogo()),
             ListTile(
-                title: Text('Add user'),
+                title: const Text('Add user'),
                 onTap: () {
                   _incrementCounter();
                   Navigator.pop(context);
@@ -52,7 +51,7 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
             for (int i = 0; i < userCount; i++)
               UserItem(
                   imageUrl: 'https://randomuser.me/api/portraits/women/$i.jpg',
-                  name: 'Kurják Richárd5',
+                  name: 'Kurják Richárd $i',
                   email: 'kurjak.richard@gmail.com'),
           ],
         ),

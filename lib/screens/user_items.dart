@@ -29,13 +29,14 @@ class UserItem extends StatelessWidget {
             ),
           ],
         ),
-        clipBehavior: Clip.antiAlias,
+        clipBehavior: Clip.antiAlias, //Emiatt van a kép lekerekítve
         height: 70,
         child: Row(
           children: [
-            Image.network(imageUrl),
+            Image.file(File('C:/Users/balza/OneDrive/Képek/Társkereső/a.jpg')),
             const SizedBox(width: 16),
             Expanded(
+              //Így a widget mindig kitölti a rendelkezésre álló helyet.
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,7 +44,8 @@ class UserItem extends StatelessWidget {
                   Text(
                     name,
                     style: const TextStyle(fontSize: 18),
-                    overflow: TextOverflow.ellipsis,
+                    overflow: TextOverflow
+                        .ellipsis, //.. jelenít meg, ha túl hosszú a szöveg
                   ),
                   Text(
                     email,

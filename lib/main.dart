@@ -11,10 +11,13 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Employee app',
-      home: EmployeeListPage(),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: const EmployeeListPage(),
     );
   }
 }

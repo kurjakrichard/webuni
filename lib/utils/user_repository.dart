@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import 'user_data.dart';
+import 'package:webuni/models/user_data.dart';
 
 class UserRepositoryData {
   final List<UserData> users;
@@ -82,8 +81,7 @@ class _UserRepositoryProviderState extends State<UserRepositoryProvider> {
     return UserRepository(_repositoryData, child: widget.child);
   }
 
-  void _onDelete(int userId) =>
-      setState(() {
+  void _onDelete(int userId) => setState(() {
         _repositoryData = UserRepositoryData(
           _repositoryData.users.toList()
             ..removeWhere((element) => element.id == userId),
@@ -92,11 +90,11 @@ class _UserRepositoryProviderState extends State<UserRepositoryProvider> {
         );
       });
 
-  void _onAddUser(UserData modifiedUser) =>
-      setState(() {
+  void _onAddUser(UserData modifiedUser) => setState(() {
         _repositoryData = UserRepositoryData(
           _repositoryData.users.toList()..add(modifiedUser),
           _onDelete,
-          _onAddUser,);
+          _onAddUser,
+        );
       });
 }
