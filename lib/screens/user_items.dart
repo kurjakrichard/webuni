@@ -1,16 +1,12 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
-  final String imageUrl;
+  final ImageProvider image;
   final String name;
   final String email;
 
   const UserItem(
-      {Key? key,
-      required this.imageUrl,
-      required this.name,
-      required this.email})
+      {Key? key, required this.image, required this.name, required this.email})
       : super(key: key);
 
   @override
@@ -33,7 +29,7 @@ class UserItem extends StatelessWidget {
         height: 70,
         child: Row(
           children: [
-            Image.file(File('C:/Users/balza/OneDrive/Képek/Társkereső/a.jpg')),
+            Image(image: image),
             const SizedBox(width: 16),
             Expanded(
               //Így a widget mindig kitölti a rendelkezésre álló helyet.
