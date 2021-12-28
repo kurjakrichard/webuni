@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webuni/screens/user_details.dart';
 import 'package:webuni/screens/user_items.dart';
 import 'package:webuni/utils/user_repository.dart';
 
@@ -20,9 +21,17 @@ class EmployeeListPage extends StatelessWidget {
             children: [
               for (var user in repository.users)
                 UserItem(
-                    image: user.avatarProvider,
-                    name: user.name,
-                    email: user.email),
+                  image: user.avatarProvider,
+                  name: user.name,
+                  email: user.email,
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/user/${user.id}',
+                      arguments: user,
+                    );
+                  },
+                ),
             ],
           );
         }),
