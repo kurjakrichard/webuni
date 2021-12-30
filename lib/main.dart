@@ -1,6 +1,7 @@
 //A material design kell a fejlesztéshez.
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webuni/screens/add_user.dart';
 import 'package:webuni/screens/employee_list_page.dart';
 import 'package:webuni/screens/user_details.dart';
 import 'package:webuni/utils/user_repository.dart';
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.red,
           ),
           home: const EmployeeListPage(),
+          routes: {
+            '/addUser': (context) => const AddUserPage(),
+          },
           onGenerateRoute: (settings) {
             if (settings.name?.startsWith('/user/') ?? false) {
               var id = int.parse(settings.name!.split('/')[2]);

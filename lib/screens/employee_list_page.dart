@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webuni/screens/user_details.dart';
 import 'package:webuni/screens/user_items.dart';
 import 'package:webuni/utils/user_repository.dart';
 
@@ -35,6 +34,12 @@ class EmployeeListPage extends StatelessWidget {
             ],
           );
         }),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.pushNamed(context, '/addUser');
+        },
       ),
     );
   }
