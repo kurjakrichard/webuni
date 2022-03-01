@@ -17,18 +17,18 @@ class AddUserPage extends StatelessWidget {
         var result = await showDialog(
             context: context,
             builder: (context) => AlertDialog(
-                  title: Text('Are you sure?'),
+                  title: const Text('Are you sure?'),
                   actions: [
                     TextButton(
                         onPressed: () {
                           Navigator.pop(context, false);
                         },
-                        child: Text('Cancel')),
+                        child: const Text('Cancel')),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context, true);
                       },
-                      child: Text('Leave'),
+                      child: const Text('Leave'),
                     )
                   ],
                 ));

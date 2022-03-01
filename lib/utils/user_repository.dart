@@ -12,8 +12,8 @@ class UserRepositoryData {
 class UserRepository extends InheritedWidget {
   final UserRepositoryData _data;
 
-  const UserRepository(this._data, {required Widget child})
-      : super(child: child);
+  const UserRepository(this._data, {Key? key, required Widget child})
+      : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(covariant UserRepository oldWidget) =>

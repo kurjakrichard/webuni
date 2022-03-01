@@ -36,7 +36,7 @@ class EmployeeListPage extends StatelessWidget {
         }),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           Navigator.pushNamed(context, '/addUser');
         },

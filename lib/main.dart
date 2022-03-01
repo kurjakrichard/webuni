@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
                   builder: (context) => const UserDetailsPage(),
                   settings: settings.copyWith(arguments: user));
             }
+            return null;
           },
         );
       }),

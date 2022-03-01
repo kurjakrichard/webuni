@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webuni/models/user_data.dart';
 import 'package:webuni/utils/user_repository.dart';
@@ -22,13 +21,13 @@ class UserDetailsPage extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                          title: Text('Are you sure?'),
+                          title: const Text('Are you sure?'),
                           actions: [
                             TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text('Cancel')),
+                                child: const Text('Cancel')),
                             TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
@@ -36,7 +35,7 @@ class UserDetailsPage extends StatelessWidget {
                                     .onDeleteUser(user.id);
                                 Navigator.pop(context);
                               },
-                              child: Text('Delete'),
+                              child: const Text('Delete'),
                             )
                           ],
                         ));
